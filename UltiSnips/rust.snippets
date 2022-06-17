@@ -10,6 +10,46 @@ fn ${1:function_name}($2)${3/..*/ -> /}$3 {
 }
 endsnippet
 
+snippet let "let name[:type]=exp (let)"
+let ${1:name}${2::type}= ${3:expression};
+endsnippet
+
+snippet if "if ... (if)"
+if (${1:condition}) {
+	${VISUAL}${2:${VISUAL/(.*)//}}
+} ${0}
+endsnippet
+
+snippet elif "else if ... (elif)"
+else if (${1:condition}) {
+	${VISUAL}${2:${VISUAL/(.*)//}}
+} ${0}
+endsnippet
+
+snippet el "else ... (else)"
+else {
+	${VISUAL}${1:${VISUAL/(.*)//}}
+} ${0}
+endsnippet
+
+snippet for "for ... (for)"
+for ${1:iterater} in ${2:expression} {
+	${0}
+}
+endsnippet
+
+snippet forr "for x in range(0, 10) ... (forr)"
+for ${VISUAL}${1:${VISUAL/(.*)/x/}} in range(${VISUAL}${2:${VISUAL/(.*)/0/}}, ${VISUAL}${3:${VISUAL/(.*)/10/}}) {
+	${0}
+}
+endsnippet
+
+snippet wh "while ... (while)"
+while ${1:condition} {
+	${0}
+}
+endsnippet
+
 snippet pfn "pub fn name(?) -> ? {}"
 pub fn ${1:function_name}($2)${3/..*/ -> /}$3 {
 	${VISUAL}$0
